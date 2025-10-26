@@ -12,6 +12,7 @@ import (
 	"time"
 
 	"github.com/iamneuron/students-check-api/internal/config"
+	"github.com/iamneuron/students-check-api/internal/http/handlers/student"
 )
 
 func main() {
@@ -25,10 +26,7 @@ func main() {
 	//setup router
 	router := http.NewServeMux()
 
-	router.HandleFunc("GET /", func(w http.ResponseWriter, r *http.Request) {
-		w.Write([]byte("welocame to api...."))
-
-	})
+	router.HandleFunc("POST /api/students", student.New())
 
 	//greacefull shutdown
 
