@@ -13,7 +13,8 @@ type HttpServer struct {
 }
 type Config struct {
 	Env         string `yaml:"env" env-required:"true" env-default:"production"` // this caled struct tags
-	Storagepath string `yaml:"storagepath"`
+	// YAML file uses `storage_path`, so match that key here.
+	Storagepath string `yaml:"storage_path"`
 	HttpServer  `yaml:"http_server"`
 }
 
