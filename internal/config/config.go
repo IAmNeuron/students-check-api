@@ -9,11 +9,11 @@ import (
 )
 
 type HttpServer struct {
-	Addr string
+	Addr string `yaml:"address" env-required:"true"`
 }
 type Config struct {
 	Env         string `yaml:"env" env-required:"true" env-default:"production"` // this caled struct tags
-	Storagepath string `yaml:"storagepath" env-required:"true"`
+	Storagepath string `yaml:"storagepath"`
 	HttpServer  `yaml:"http_server"`
 }
 
